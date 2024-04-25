@@ -3,3 +3,40 @@
     padding: 0;
     box-sizing: border-box;
 }
+li,a{
+    text-decoration: none;
+    list-style: none;
+}
+header{
+    padding: 40px;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    background-color: brown;
+    border-radius: 50%;
+
+    
+}
+
+.menu_wrapper{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    font-size: 25px;
+
+}
+.menu_wrapper>li{
+    cursor: pointer;
+}
+
+.content{
+    text-align: center;
+    margin: 50px;
+    font-size: 25px;
+}
