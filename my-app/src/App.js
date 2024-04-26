@@ -1,32 +1,14 @@
 
-import './App.css';
-import Header from './components/Header';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ContactsPage from './pages/ContactsPage';
-import NotFoudPage from './pages/NotFoudPage';
-import ProductListPage from './pages/ProductListPage';
+// React-router-dom (новая концепция работы над маршрутизацией)
+// В новой версии настройки роутов выносятся в отдельный файл 
+// в объекте router (router.js)
 
+import { RouterProvider } from "react-router-dom"
+import './App.css'
+import { router } from "../src/components/router"
 
-
-function App() {
-  return (
-    <div>     
-      
-      <Router>
-      <Header />
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<AboutPage />} />
-          <Route path='/contacts' element={<ContactsPage />} />
-          <Route path='/products' element={<ProductListPage />} />
-          <Route path='*' element={<NotFoudPage />} />
-        </Routes>
-      </Router>
-
-    </div>
-  );
+function App(){
+    return <RouterProvider router={router}/>
 }
 
-export default App;
+export default App

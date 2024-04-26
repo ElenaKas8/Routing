@@ -40,3 +40,20 @@ header{
     margin: 50px;
     font-size: 25px;
 }
+
+.product{
+display: flex;
+}
+.product>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.menu_wrapper  a {
+    text-decoration: none;
+  }
+  
+  .menu_wrapper  a.active {
+    color: brown;
+  }

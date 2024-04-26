@@ -1,25 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-const ProductListPage = () => {
+
+function ProductListPage() {
+
     const [products, setProducts] = useState([])
 
-    useEffect(() => {
+    useEffect(() => { 
         fetch('https://dummyjson.com/products')
-        .then(res => res.json())
-        .then(data => setProducts(data.products))
+            .then(res => res.json())
+            .then(data => setProducts(data.products))
     }, [])
 
-
-  return (
-    <div className='content'>
+     return (
+      <div className="content">
         <ul>
-            {products.map(product =>
-                 <li key={product.id}>
-                    {` ${product.brand} - ${product.title}`}
-                    </li>)}
+            {products.map(elem => 
+                <li key={elem.id}>
+                  <Link to={`/products/${elem.id}`}>
+                    {`${elem.id}) ${elem.title}`}
+                  </Link>
+                </li>
+            )}
         </ul>
-    </div>
-  )
-}
-
-export default ProductListPage
+      </div>
+    );
+  }
+  
+  export default ProductListPage;
+  
